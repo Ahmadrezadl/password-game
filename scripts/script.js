@@ -102,7 +102,6 @@ function renderRules() {
         // If it's the captcha rule (index 9), we show the rule text + the image
         if (i === 9) {
             // Show text describing the captcha
-            // e.g. "Your password must include the following captcha:"
             const description = document.createElement("p");
             description.textContent = ruleText;
             ruleBody.appendChild(description);
@@ -118,7 +117,6 @@ function renderRules() {
                 ruleBody.appendChild(document.createTextNode("Captcha not loaded."));
             }
         } else {
-            // Normal rules: just show the text
             ruleBody.textContent = ruleText;
         }
 
@@ -192,7 +190,7 @@ passwordInput.addEventListener("input", () => {
     renderRules();
 
     // If the last rule is passed, show the retype input
-    if (statuses[totalRules - 1] === "passed") {
+    if (statuses.every(status => status === "passed")) {
         finalPassword = currentPassword;
         passwordInput.style.display = "none";
         passwordRetypeInput.style.display = "block";
