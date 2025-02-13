@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Password Game</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+            integrity="sha512-+4+ZvJM6Csg3c7rx1I8r5w6U9U0b1hU6M29tj8rAmjVa0BiKOJxKCRZaCF4XQ2ZK0+ks8u3EF0R+QGpH1nVKug=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+    />
+</head>
+<body>
+<div class="container">
+    <div class="language-select">
+        <label for="languageSelect">Select Language:</label>
+        <select id="languageSelect">
+            <option value="en">English</option>
+            <option value="fa">فارسی</option>
+        </select>
+    </div>
+
+    <h1 id="gameTitle">The Password Game</h1>
+
+    <input
+            type="text"
+            id="passwordInput"
+            placeholder="Choose your password..."
+    />
+
+    <div id="rulesContainer"></div>
+
+    <input
+            type="text"
+            id="passwordRetypeInput"
+            placeholder="Retype your password to confirm..."
+            style="display:none;"
+    />
+    <button id="retypeBtn" style="display:none;">Confirm</button>
+
+    <div class="alert" id="alertMessage" style="display:none;">
+        Passwords do not match! Try again.
+    </div>
+
+    <div id="winMessage">You win!</div>
+</div>
+
+<footer class="footer">
+    <div class="footer-content">
+        <a href="https://github.com/Ahmadrezadl" target="_blank" class="footer-link">
+            <i class="fab fa-github"></i> GitHub
+        </a>
+        <a href="https://github.com/Ahmadrezadl/password-game" target="_blank" class="footer-link">
+            <i class="fas fa-code-branch"></i> Source
+        </a>
+        <a href="https://www.linkedin.com/in/ahmadreza-kamali-a621aa188/" target="_blank" class="footer-link">
+            <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="https://instagram.com/Ahmadrezadl" target="_blank" class="footer-link">
+            <i class="fab fa-instagram"></i> Instagram
+        </a>
+    </div>
+</footer>
+
+<script src="scripts/localization.js"></script>
+<script src="scripts/utilities/romanUtils.js"></script>
+<script src="scripts/utilities/captcha.js"></script>
+<script src="scripts/script.js"></script>
+</body>
+</html>

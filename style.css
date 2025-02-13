@@ -1,0 +1,140 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f2f4f9, #ffffff);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: #fff;
+    max-width: 600px;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.language-select {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin: 10px 0 20px;
+}
+
+
+#passwordInput,
+#passwordRetypeInput {
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    outline: none;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+#passwordInput:focus,
+#passwordRetypeInput:focus {
+    border-color: #777;
+    background-color: #f9f9f9;
+}
+
+
+#rulesContainer {
+    margin-top: 10px;
+}
+.rule {
+    margin-bottom: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    overflow: hidden;
+}
+.ruleHeader {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    font-weight: bold;
+}
+.ruleBody {
+    padding: 10px 12px;
+    font-size: 0.95rem;
+}
+
+
+.rulePassed .ruleHeader {
+    background-color: #d4edda; 
+    color: #155724;
+    border-bottom: 1px solid #c3e6cb;
+}
+.ruleFailed .ruleHeader {
+    background-color: #f8d7da; 
+    color: #721c24;
+    border-bottom: 1px solid #f5c6cb;
+}
+
+
+#retypeBtn {
+    background: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+#retypeBtn:hover {
+    background: #45a049;
+}
+
+
+.alert {
+    color: red;
+    text-align: center;
+    margin-top: 8px;
+    font-size: 0.9rem;
+}
+#winMessage {
+    text-align: center;
+    font-size: 1.2rem;
+    color: green;
+    margin-top: 10px;
+    display: none;
+}
+
+
+.footer {
+    margin-top: 40px;
+    text-align: center;
+    color: #666;
+}
+.footer-content {
+    display: inline-flex;
+    gap: 20px;
+}
+.footer-link {
+    color: #666;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+.footer-link i {
+    margin-right: 6px;
+}
+.footer-link:hover {
+    color: #111;
+}
