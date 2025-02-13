@@ -1,6 +1,6 @@
 # DL Password Game
 
-A fun, interactive project inspired by **[neal.fun's Password Game](https://neal.fun/password-game/)**.  
+A fun, interactive project inspired by neal.fun's Password Game.  
 Enter a password that satisfies a series of quirky rules (implemented in HTML, CSS, and JavaScript) to “win.”
 
 ## Live Demo
