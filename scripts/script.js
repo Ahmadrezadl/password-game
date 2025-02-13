@@ -161,44 +161,30 @@ function reCheckAllRules() {
     }
 }
 
+const ruleValidators = [
+    password => password.length >= 6,
+    password => /\d/.test(password),
+    password => /[A-Z]/.test(password),
+    password => /[!@#$%^&*(),.?":{}|<>]/.test(password),
+    password => {
+        const sumDigits = password
+            .split('')
+            .reduce((sum, c) => sum + (/\d/.test(c) ? parseInt(c) : 0), 0);
+        return sumDigits === 23;
+    },
+    password => months.some(month => password.toLowerCase().includes(month)),
+    password => romanNumerals.some(rn => password.includes(rn)),
+    password => sponsors[currentLang].some(s => password.toLowerCase().includes(s)),
+    password => multiplyRomanNumeralsInString(password) === 35,
+    password => captchaData && password.includes(captchaData.text),
+    password => password.includes(timeToEmoji())
+];
+
 function checkRule(ruleIndex, password) {
-    switch (ruleIndex) {
-        case 0:
-            return password.length >= 6;
-        case 1:
-            return /\d/.test(password);
-        case 2:
-            return /[A-Z]/.test(password);
-        case 3:
-            return /[!@#$%^&*(),.?":{}|<>]/.test(password);
-        case 4:
-            // sum of digits = 23
-            const sumDigits = password
-                .split('')
-                .reduce((sum, c) => sum + (/\d/.test(c) ? parseInt(c) : 0), 0);
-            return sumDigits === 23;
-        case 5:
-            // includes a month
-            return months.some(month => password.toLowerCase().includes(month));
-        case 6:
-            // includes a Roman numeral (any of I..XII)
-            return romanNumerals.some(rn => password.includes(rn));
-        case 7:
-            // includes sponsor
-            return sponsors[currentLang].some(s => password.toLowerCase().includes(s));
-        case 8:
-            // The Roman numerals in your password should multiply to 35
-            return multiplyRomanNumeralsInString(password) === 35;
-        case 9:
-            // Captcha rule
-            return captchaData && password.includes(captchaData.text);
-        case 10:
-            // Show What time is it with emoji
-            let timeEmoji = timeToEmoji();
-            return password.includes(timeEmoji);
-        default:
-            return true;
+    if (ruleIndex < 0 || ruleIndex >= ruleValidators.length) {
+        return true;
     }
+    return ruleValidators[ruleIndex](password);
 }
 
 // ------------------- Event Listeners ------------------- //
