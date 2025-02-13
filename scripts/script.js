@@ -170,7 +170,7 @@ const ruleValidators = [
         const sumDigits = password
             .split('')
             .reduce((sum, c) => sum + (/\d/.test(c) ? parseInt(c) : 0), 0);
-        return sumDigits === 23;
+        return sumDigits === 37;
     },
     password => months.some(month => password.toLowerCase().includes(month)),
     password => romanNumerals.some(rn => password.includes(rn)),
