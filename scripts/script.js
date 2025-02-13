@@ -192,6 +192,10 @@ function checkRule(ruleIndex, password) {
         case 9:
             // Captcha rule
             return captchaData && password.includes(captchaData.text);
+        case 10:
+            // Show What time is it with emoji
+            let timeEmoji = timeToEmoji();
+            return password.includes(timeEmoji);
         default:
             return true;
     }

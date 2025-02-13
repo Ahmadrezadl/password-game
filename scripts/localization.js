@@ -11,7 +11,8 @@ const translations = {
             "Your password must include a Roman numeral.",
             "Your password must include one of our sponsors: (Pepsi, Starbucks, Shell).",
             "The Roman numerals in your password should multiply to 35.",
-            "Your password must include the following captcha:"
+            "Your password must include the following captcha:",
+            "Your password must indicate the time using an emoji",
         ],
         retypePlaceholder: "Retype your password to confirm...",
         retypeBtn: "Confirm",
@@ -31,7 +32,8 @@ const translations = {
             "رمز عبور شما باید شامل یک عدد رومی باشد.",
             "رمز عبور شما باید شامل یکی از حامیان ما باشد: (Tapsi, Myket, Baziness).",
             "اعداد رومی موجود در رمز عبور شما باید در هم ضرب شوند و حاصل‌ضرب آن‌ها ۳۵ باشد.",
-            "رمز عبور شما باید شامل کپچای زیر باشد:"
+            "رمز عبور شما باید شامل کپچای زیر باشد:",
+            "رمز عبور شما باید با ایموجی نشان دهد ساعت چند است."
         ],
         retypePlaceholder: "رمز عبور را دوباره وارد کنید...",
         retypeBtn: "تایید",
