@@ -179,6 +179,7 @@ const ruleValidators = [
     password => captchaData && password.includes(captchaData.text),
     password => password.includes(timeToEmoji()),
     password => periodicElements.some(pe => password.includes(pe)),
+    password => hasMorseCode(password),
 ];
 
 function checkRule(ruleIndex, password) {
