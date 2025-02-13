@@ -16,7 +16,7 @@ let currentPassword = "";
 let maxUnlockedIndex = 0;
 let statuses = [];
 
-// Additional data
+// Constants
 const months = [
     "january", "february", "march", "april", "may", "june",
     "july", "august", "september", "october", "november", "december",
@@ -164,7 +164,7 @@ function reCheckAllRules() {
 function checkRule(ruleIndex, password) {
     switch (ruleIndex) {
         case 0:
-            return password.length >= 5;
+            return password.length >= 6;
         case 1:
             return /\d/.test(password);
         case 2:
@@ -172,11 +172,11 @@ function checkRule(ruleIndex, password) {
         case 3:
             return /[!@#$%^&*(),.?":{}|<>]/.test(password);
         case 4:
-            // sum of digits = 25
+            // sum of digits = 23
             const sumDigits = password
                 .split('')
                 .reduce((sum, c) => sum + (/\d/.test(c) ? parseInt(c) : 0), 0);
-            return sumDigits === 25;
+            return sumDigits === 23;
         case 5:
             // includes a month
             return months.some(month => password.toLowerCase().includes(month));
