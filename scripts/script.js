@@ -55,7 +55,6 @@ function updateLanguage(lang) {
         maxUnlockedIndex = 0;
     }
 
-    // If new rules were added in the translations, expand the statuses array
     if (statuses.length < totalRules) {
         const oldLen = statuses.length;
         statuses.length = totalRules;
@@ -65,7 +64,7 @@ function updateLanguage(lang) {
     }
     passwordInput.setAttribute("placeholder", translations[currentLang].passwordPlaceholder);
     document.querySelector('label[for="languageSelect"]').textContent = t.selectLanguage;
-    
+
     if (lang === "fa") {
         document.body.classList.add("rtl");
     } else {
@@ -188,7 +187,11 @@ const ruleValidators = [
     password => password.includes(timeToEmoji()),
     password => periodicElements.some(pe => password.includes(pe)),
     password => hasMorseCode(password),
-    password => password.includes(new Date().getFullYear())
+    password => password.includes(new Date().getFullYear()),
+    password => {
+        const numbers = password.match(/\d+/g);
+        return numbers && numbers.includes(password.length.toString());
+    }
 ];
 
 function checkRule(ruleIndex, password) {
