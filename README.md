@@ -33,4 +33,4 @@ Fork the project and add any creative rules you’d like.
 
 This project is licensed under the [MIT License](LICENSE). You are free to modify or distribute as you wish.
 
-Enjoy the Password Game!  
+Enjoy the DL Password Game!  

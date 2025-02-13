@@ -1,6 +1,6 @@
 const translations = {
     en: {
-        gameTitle: "The Password Game",
+        gameTitle: "DL Password Game",
         rules: [
             "Your password must be at least 6 characters.",
             "Your password must include a number.",
