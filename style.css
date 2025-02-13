@@ -160,3 +160,13 @@ h1 {
         padding: 8px;
     }
 }
+
+.rtl {
+    direction: rtl;
+    text-align: right;
+}
+
+.rtl .container {
+    direction: rtl;
+    text-align: right;
+}

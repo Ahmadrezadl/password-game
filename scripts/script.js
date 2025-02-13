@@ -63,6 +63,14 @@ function updateLanguage(lang) {
             statuses[i] = "failed";
         }
     }
+    passwordInput.setAttribute("placeholder", translations[currentLang].passwordPlaceholder);
+    document.querySelector('label[for="languageSelect"]').textContent = t.selectLanguage;
+    
+    if (lang === "fa") {
+        document.body.classList.add("rtl");
+    } else {
+        document.body.classList.remove("rtl");
+    }
 
     reCheckAllRules();
     renderRules();

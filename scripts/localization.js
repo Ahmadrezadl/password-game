@@ -21,7 +21,9 @@ const translations = {
         retypeBtn: "Confirm",
         winMessage: "You win!",
         alertMessage: "Passwords do not match! Try again.",
-        ruleWord: "Rule"
+        ruleWord: "Rule",
+        passwordPlaceholder: "Choose your password...",
+        selectLanguage: "Select Language:"
     },
     fa: {
         gameTitle: "رمز عبور",
@@ -45,6 +47,8 @@ const translations = {
         retypeBtn: "تایید",
         winMessage: "شما برنده شدید!",
         alertMessage: "رمزهای عبور مطابقت ندارند! دوباره تلاش کنید.",
-        ruleWord: "قانون"
+        ruleWord: "قانون",
+        passwordPlaceholder: "رمز عبور خود را انتخاب کنید...",
+        selectLanguage: "انتخاب زبان:"
     }
 };
