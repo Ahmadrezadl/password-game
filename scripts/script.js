@@ -73,12 +73,28 @@ function renderRules() {
     rulesContainer.innerHTML = "";
     const t = translations[currentLang];
 
-    // We only render up to maxUnlockedIndex
-    for (let i = maxUnlockedIndex; i >= 0; i--) {
+    // Build an array of rule indices from 0 to maxUnlockedIndex
+    const ruleIndices = [];
+    for (let i = 0; i <= maxUnlockedIndex; i++) {
+        ruleIndices.push(i);
+    }
+
+    // Sort the indices: failed rules come first, then sort by rule number (descending, as before)
+    ruleIndices.sort((a, b) => {
+        // If the statuses are different, put the failed one on top
+        if (statuses[a] !== statuses[b]) {
+            return statuses[a] === "failed" ? -1 : 1;
+        }
+        // Otherwise, sort by rule number descending (or change to a - b for ascending)
+        return b - a;
+    });
+
+    // Render rules in the new order
+    ruleIndices.forEach(i => {
         const ruleDiv = document.createElement("div");
         ruleDiv.classList.add("rule");
 
-        // Passed or failed?
+        // Determine the icon and css class based on status
         let icon = "❌";
         let cssClass = "ruleFailed";
         if (statuses[i] === "passed") {
@@ -96,17 +112,15 @@ function renderRules() {
         const ruleBody = document.createElement("div");
         ruleBody.classList.add("ruleBody");
 
-        // The text from translations
+        // Get the rule text from translations
         let ruleText = t.rules[i] || `Undefined rule #${i + 1}`;
 
-        // If it's the captcha rule (index 9), we show the rule text + the image
+        // Special handling for the captcha rule (index 9)
         if (i === 9) {
-            // Show text describing the captcha
             const description = document.createElement("p");
             description.textContent = ruleText;
             ruleBody.appendChild(description);
 
-            // Then show the captcha image
             if (captchaData && captchaData.dataURL) {
                 const img = document.createElement("img");
                 img.src = captchaData.dataURL;
@@ -123,8 +137,9 @@ function renderRules() {
         ruleDiv.appendChild(ruleHeader);
         ruleDiv.appendChild(ruleBody);
         rulesContainer.appendChild(ruleDiv);
-    }
+    });
 }
+
 
 // ------------------- Rule Checking ------------------- //
 
