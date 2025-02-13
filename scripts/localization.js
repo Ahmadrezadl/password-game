@@ -13,6 +13,7 @@ const translations = {
             "The Roman numerals in your password should multiply to 35.",
             "Your password must include the following captcha:",
             "Your password must indicate the time using an emoji",
+            "Your password must include an element from the periodic table."
         ],
         retypePlaceholder: "Retype your password to confirm...",
         retypeBtn: "Confirm",
@@ -33,7 +34,8 @@ const translations = {
             "رمز عبور شما باید شامل یکی از حامیان ما باشد: (Tapsi, Myket, Baziness).",
             "اعداد رومی موجود در رمز عبور شما باید در هم ضرب شوند و حاصل‌ضرب آن‌ها ۳۵ باشد.",
             "رمز عبور شما باید شامل کپچای زیر باشد:",
-            "رمز عبور شما باید با ایموجی نشان دهد ساعت چند است."
+            "رمز عبور شما باید با ایموجی نشان دهد ساعت چند است.",
+            "رمز عبور شما باید شامل یک عنصر از جدول تناوبی عناصر باشد."
         ],
         retypePlaceholder: "رمز عبور را دوباره وارد کنید...",
         retypeBtn: "تایید",

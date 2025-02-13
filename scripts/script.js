@@ -177,7 +177,8 @@ const ruleValidators = [
     password => sponsors[currentLang].some(s => password.toLowerCase().includes(s)),
     password => multiplyRomanNumeralsInString(password) === 35,
     password => captchaData && password.includes(captchaData.text),
-    password => password.includes(timeToEmoji())
+    password => password.includes(timeToEmoji()),
+    password => periodicElements.some(pe => password.includes(pe)),
 ];
 
 function checkRule(ruleIndex, password) {
