@@ -180,6 +180,7 @@ const ruleValidators = [
     password => password.includes(timeToEmoji()),
     password => periodicElements.some(pe => password.includes(pe)),
     password => hasMorseCode(password),
+    password => password.includes(new Date().getFullYear())
 ];
 
 function checkRule(ruleIndex, password) {
