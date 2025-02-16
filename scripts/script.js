@@ -7,6 +7,7 @@ const passwordRetypeInput = document.getElementById("passwordRetypeInput");
 const retypeBtn = document.getElementById("retypeBtn");
 const winMessage = document.getElementById("winMessage");
 const alertMessage = document.getElementById("alertMessage");
+const passwordLengthIndicator = document.getElementById("passwordLengthIndicator");
 
 // State
 let currentLang = "en";
@@ -26,10 +27,6 @@ const months = [
     "mehr", "aban", "azar", "dey", "bahman", "esfand"
 ];
 
-const romanNumerals = [
-    "I", "II", "III", "IV", "V", "VI",
-    "VII", "VIII", "IX", "X", "XI", "XII"
-];
 
 const sponsors = {
     en: ["pepsi", "starbucks", "shell"],
@@ -180,7 +177,7 @@ const ruleValidators = [
         return sumDigits === 37;
     },
     password => months.some(month => password.toLowerCase().includes(month)),
-    password => romanNumerals.some(rn => password.includes(rn)),
+    password => Object.keys(romanToValue).some(rn => password.includes(rn)),
     password => sponsors[currentLang].some(s => password.toLowerCase().includes(s)),
     password => multiplyRomanNumeralsInString(password) === 35,
     password => captchaData && password.includes(captchaData.text),
@@ -207,8 +204,8 @@ passwordInput.addEventListener("input", () => {
     currentPassword = passwordInput.value;
     reCheckAllRules();
     renderRules();
+    passwordLengthIndicator.textContent = passwordInput.value.length;
 
-    // If the last rule is passed, show the retype input
     if (statuses.every(status => status === "passed")) {
         finalPassword = currentPassword;
         passwordInput.style.display = "none";
