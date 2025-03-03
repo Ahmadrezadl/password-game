@@ -16,7 +16,8 @@ const translations = {
             "Your password must include an element from the periodic table.",
             "Your password must contain a valid Morse code segment representing a letter.",
             "Your password must include the current year number.",
-            "Your password must include its own length as a number."
+            "Your password must include its own length as a number.",
+            "Your password must end with 'dl'"
         ],
         retypePlaceholder: "Retype your password to confirm...",
         retypeBtn: "Confirm",
@@ -43,7 +44,8 @@ const translations = {
             "رمز عبور شما باید شامل یک عنصر از جدول تناوبی عناصر باشد.",
             "رمز عبور شما باید حداقل یک بخش معتبر کد مورس که نمایانگر یک حرف باشد، را شامل شود.",
             "رمز عبور شما باید شامل سال جاری میلادی باشد.",
-            "رمز عبور شما باید شامل عدد تعداد کاراکترهای خودش باشد."
+            "رمز عبور شما باید شامل عدد تعداد کاراکترهای خودش باشد.",
+            "رمز عبور شما باید با 'dl' تمام شود"
         ],
         retypePlaceholder: "رمز عبور را دوباره وارد کنید...",
         retypeBtn: "تایید",

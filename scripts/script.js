@@ -188,7 +188,8 @@ const ruleValidators = [
     password => {
         const numbers = password.match(/\d+/g);
         return numbers && numbers.includes(password.length.toString());
-    }
+    },
+    password => password.endsWith("dl")
 ];
 
 function checkRule(ruleIndex, password) {
